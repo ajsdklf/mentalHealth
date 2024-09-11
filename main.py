@@ -1,8 +1,12 @@
 import streamlit as st
 from openai import OpenAI
 import json
+from dotenv import load_dotenv
+import os
 
-client = OpenAI()
+load_dotenv()
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 st.set_page_config(page_title="정신 건강 챗봇", page_icon="🤖💚", layout="wide")
 
